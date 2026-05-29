@@ -15,7 +15,6 @@ import {
   Volume2, 
   Check, 
   Calendar, 
-  Copy, 
   X, 
   ExternalLink,
   Crown,
@@ -37,8 +36,7 @@ import {
   ATRACOES, 
   CARDAPIO, 
   SORTEIOS, 
-  LEMBRANCINHA_FINAL, 
-  STATIC_HTML_TEMPLATE 
+  LEMBRANCINHA_FINAL 
 } from './data';
 
 // Component state interface for local testing
@@ -55,7 +53,6 @@ interface FormState {
 }
 
 export default function App() {
-  const [copied, setCopied] = useState(false);
   const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
   const [acompanhanteSim, setAcompanhanteSim] = useState(false);
   
@@ -103,16 +100,6 @@ export default function App() {
     bebidasSelected: [],
     restricao: ''
   });
-
-  const handleCopyCode = async () => {
-    try {
-      await navigator.clipboard.writeText(STATIC_HTML_TEMPLATE);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
-    } catch (err) {
-      console.error('Failed to copy text', err);
-    }
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -948,40 +935,7 @@ export default function App() {
         </AnimatePresence>
       </section>
 
-      {/* SEÇÃO EXTRA: NETLIFY EXPORT MANAGER UTILITY */}
-      <section className="py-12 max-w-4xl mx-auto px-4 w-full border-t border-neutral-200 mt-12 bg-neutral-100/10">
-        <div className="bg-glass rounded-3xl p-6 md:p-10 border border-neutral-200/55 shadow-lg relative">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-2 text-teal-600 mb-2">
-                <Copy className="w-5 h-5" />
-                <span className="font-display font-medium text-sm tracking-wider uppercase font-bold">EXPORTAR SEU LANDING PAGE PARA NETLIFY</span>
-              </div>
-              <h3 className="font-display text-xl font-bold text-[#1A1A1A] uppercase tracking-tight">CÓDIGO NETLIFY MONO-ARQUIVO</h3>
-              <p className="text-neutral-600 text-xs mt-1.5 leading-relaxed max-w-2xl font-medium">
-                O site final solicita um arquivo <code className="bg-neutral-150 hover:bg-neutral-200 px-1.5 py-0.5 rounded text-teal-700 border border-neutral-200 text-[11px] font-mono font-bold">index.html</code> independente e com <code className="bg-neutral-150 px-1.5 py-0.5 rounded text-sunset-orange border border-neutral-200 text-[11px] font-mono font-bold">data-netlify="true"</code>. Preparamos o arquivo completo otimizado com todas as descrições em um clique!
-              </p>
-            </div>
-            
-            <button 
-              onClick={handleCopyCode}
-              className={`flex items-center gap-2 px-6 py-3.5 rounded-xl font-mono text-xs uppercase tracking-widest font-bold border transition-all ${
-                copied 
-                  ? 'bg-emerald-50 border border-emerald-300 text-emerald-700' 
-                  : 'bg-sunset-orange/10 border border-sunset-orange text-sunset-orange hover:bg-sunset-orange hover:text-white shadow-sm font-bold'
-              }`}
-            >
-              {copied ? (
-                <>✓ CÓDIGO COPIADO!</>
-              ) : (
-                <>
-                  COPIAR CÓDIGO INDEX.HTML
-                </>
-              )}
-            </button>
-          </div>
-        </div>
-      </section>
+
 
       {/* FOOTER */}
       <footer className="bg-neutral-150 text-neutral-600 text-xs text-center py-12 px-4 border-t border-neutral-200 mt-auto">
