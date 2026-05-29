@@ -1,0 +1,6 @@
+{
+  "name": "Sunset Tropical Club",
+  "description": "Landing Page Premium do evento corporativo de meta batida no Hotel Terras Altas – Interior de SP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
