@@ -614,14 +614,15 @@ export default function App() {
             >
               {/* Form real com atributos do Netlify */}
               <form 
-                name="ibiza-beach-form" 
+                name="sunset-terras-altas-form" 
                 method="POST" 
+                netlify={true}
                 data-netlify="true" 
                 onSubmit={handleFormSubmit}
                 className="space-y-6"
               >
                 {/* Atributo oculto do Netlify Forms */}
-                <input type="hidden" name="form-name" value="ibiza-beach-form" />
+                <input type="hidden" name="form-name" value="sunset-terras-altas-form" />
 
                 {/* Nome Completo */}
                 <div>

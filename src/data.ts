@@ -178,7 +178,7 @@ export const STATIC_HTML_TEMPLATE = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUNSET TROPICAL CLUB • HOTEL TERRAS ALTAS 🌺🌴🌊</title>
+  <title>Sunset Tropical Club • Hotel Terras Altas</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -432,8 +432,8 @@ export const STATIC_HTML_TEMPLATE = `<!DOCTYPE html>
     </div>
 
     <div class="bg-glass p-8 md:p-12 rounded-3xl border border-neutral-200/60 shadow-lg relative">
-      <form name="ibiza-beach-form" method="POST" data-netlify="true" class="space-y-6">
-        <input type="hidden" name="form-name" value="ibiza-beach-form" />
+      <form name="sunset-terras-altas-form" method="POST" netlify data-netlify="true" class="space-y-6">
+        <input type="hidden" name="form-name" value="sunset-terras-altas-form" />
 
         <!-- Nome -->
         <div>
